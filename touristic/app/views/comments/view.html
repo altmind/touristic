@@ -1,0 +1,57 @@
+#{extends 'simple.html' /}
+<table style="width:100%">
+#{form @add(entityName, entityId)}
+	#{if flash?.error}
+	<tr>
+		<td>${flash.error}</td>
+	</tr> 
+	#{/if}
+	<tr>
+		<td style="width:100%">
+			<input name="content" id="formContent" class="entityCommentsInput" type="text" value="${content}"/>
+		</td>
+		<td style="width:40px">
+			<input name="submit" id="formSubmit" class="entityCommentsButton" type="submit" value="&{'entity.comments.add'}"/>
+			<script>
+				var scheduledInterval;
+				function reload()
+				{
+					if (!$("#formContent").val())
+						location.reload();
+				}
+				function setupReload()
+				{
+					if (scheduledInterval)
+						clearInterval(scheduledInterval);
+					scheduledInterval=setInterval("reload()", 60000);
+				}
+				$("#formContent").focus(function(){
+					if (scheduledInterval)
+						clearInterval(scheduledInterval);
+				});
+				$("#formContent").focusout(function(){
+					setupReload();
+				});
+				
+				setupReload();
+				if ($("#formContent").val())
+				{
+					$("#formContent").focus();
+				}
+			</script>
+		</td>
+	</tr>
+#{/form}
+	<tr>
+		<td colspan="2">
+			<div class="entityCommentsList">
+				#{list comments, as:'comment'}
+					<div class="entityComment">
+					${comment_index}. ${comment.poster.login} &{'comment.user.at.time'} ${comment.postTime.formatDateTime()}<br/>
+					${comment.content}
+					</div>
+				#{/list}
+			</div>
+		</td>
+	</tr>
+</table>

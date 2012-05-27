@@ -1,0 +1,84 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+*      /                						module:secure
+
+GET     /                                       Application.index
+
+GET		/login									Secure.login
+
+GET		/clients								Clients.list
+GET		/clients/view/{id}						Clients.view(client:null)
+*		/clients/edit/{id}						Clients.edit(client:null)
+GET		/clients/create							Clients.create
+
+GET		/catalogs/hotels						CatalogHotels.list
+GET		/catalogs/hotels/view/{id}				CatalogHotels.view(hotel:null)
+*		/catalogs/hotels/edit/{id}				CatalogHotels.edit(hotel:null)
+GET		/catalogs/hotels/create					CatalogHotels.create
+
+GET		/catalogs/countries						CatalogCountries.list
+GET		/catalogs/countries/view/{id}			CatalogCountries.view(country:null)
+*		/catalogs/countries/edit/{id}			CatalogCountries.edit(country:null)
+GET		/catalogs/countries/create				CatalogCountries.create
+
+GET		/catalogs/cities						CatalogCities.list
+GET		/catalogs/cities/view/{id}				CatalogCities.view(city:null)
+*		/catalogs/cities/edit/{id}				CatalogCities.edit(city:null)
+GET		/catalogs/cities/create					CatalogCities.create
+
+GET		/catalogs/roomtypes						CatalogRoomtypes.list
+GET		/catalogs/roomtypes/view/{id}			CatalogRoomtypes.view(roomtype:null)
+*		/catalogs/roomtypes/edit/{id}			CatalogRoomtypes.edit(roomtype:null)
+GET		/catalogs/roomtypes/create				CatalogRoomtypes.create
+
+GET		/catalogs/mealtypes						CatalogMealtypes.list
+GET		/catalogs/mealtypes/view/{id}			CatalogMealtypes.view(client:null)
+*		/catalogs/mealtypes/edit/{id}			CatalogMealtypes.edit(client:null)
+GET		/catalogs/mealtypes/create				CatalogMealtypes.create
+
+GET		/catalogs/hotelcategories				CatalogHotelcategories.list
+GET		/catalogs/hotelcategories/view/{id}		CatalogHotelcategories.view(client:null)
+*		/catalogs/hotelcategories/edit/{id}		CatalogHotelcategories.edit(client:null)
+GET		/catalogs/hotelcategories/create		CatalogHotelcategories.create
+
+GET		/requests								Requests.list
+GET		/requests/archived						Requests.archived
+GET		/requests/create						Requests.create
+GET		/requests/{id}							Requests.view
+*		/requests/{id}/edit						Requests.edit
+GET		/requests/{id}/addPayment				Requests.addPayment
+GET		/requests/{id}/service/create			Requests.chooseServiceType
+GET		/requests/{id}/service/create/{serviceType}	Requests.createService
+GET		/requests/{id}/service/{svcId}/delete	Requests.deleteService
+
+
+GET		/requests/{id}/invoice					Requests.invoice
+GET		/requests/{id}/voucher					Requests.voucher
+
+GET		/reports/								Reports.list
+GET		/reports/tourists						TouristsReports.get
+
+GET		/comments/frame/{entityName}/{entityId}	Comments.view
+POST	/comments/frame/{entityName}/{entityId}	Comments.add
+
+GET		/users									Users.list
+GET		/users/view/{id}						Users.view(client:null)
+*		/users/edit/{id}						Users.edit(client:null)
+GET		/users/create							Users.create
+
+GET		/comments/frame/{entityName}/{entityId}	Comments.view
+POST	/comments/frame/{entityName}/{entityId}	Comments.add
+
+GET		/appearance								Appearance.index
+
+GET		/rules									Rules.index
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+

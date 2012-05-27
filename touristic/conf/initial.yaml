@@ -1,0 +1,402 @@
+Config(config):
+  currency: EUR
+  
+User(user-alt):
+  login: alt
+  email: altmind@gmail.com
+  password: 34823136d0dd91d0f5d22db740f7679c
+  active: true
+  
+UserRole(urole-alt-agent):
+  user: user-alt
+  role: agent
+
+UserRole(urole-alt-manager):
+  user: user-alt
+  role: manager
+
+UserRole(urole-alt-admin):
+  user: user-alt
+  role: admin
+
+Client(client-1):
+  salutation: MR
+  name: Sergey Petrov
+  active: true
+
+Client(client-2):
+  salutation: MR
+  name: Karl Blitz
+  active: true
+  
+Client(client-3):
+  salutation: MRS
+  name: Kate Peterson
+  active: true
+  
+Client(client-4):
+  salutation: CHLD
+  name: Alex Mask
+  dateOfBirth: 2000-09-01
+  active: true
+  
+Client(client-5):
+  salutation: MR
+  name: Tom Smith
+  active: true
+  
+Client(client-6):
+  salutation: MR
+  name: Abram Johanson
+  active: true
+  
+Client(client-7):
+  salutation: MRS
+  name: Tao King
+  active: true
+  
+Client(client-8):
+  salutation: MR
+  name: Lee Man
+  active: true  
+
+Client(client-9):
+  salutation: MRS
+  name: Kate Chin
+  active: true
+  
+Client(client-10):
+  salutation: MR
+  name: Serge Gray
+  active: true  
+  
+Client(client-11):
+  salutation: MRS
+  name: J. B. Lee
+  active: true  
+  
+Client(client-12):
+  salutation: CHLD
+  name: Wayne Black
+  dateOfBirth: 2001-01-06
+  active: true  
+  
+Client(client-13):
+  salutation: CHLD
+  name: John Spear
+  dateOfBirth: 1999-02-08
+  active: true
+  
+HotelCategory(hotelcategory-1):
+  code: ONE
+  name: 1*
+  starRating: 1
+  active: true
+  
+HotelCategory(hotelcategory-2):
+  code: TWO
+  name: 2*
+  starRating: 2
+  active: true
+  
+HotelCategory(hotelcategory-3):
+  code: THREE
+  name: 3*
+  starRating: 3
+  active: true
+  
+HotelCategory(hotelcategory-4):
+  code: FOUR
+  name: 4*
+  starRating: 4
+  active: true
+  
+HotelCategory(hotelcategory-5):
+  code: FIVE
+  name: 5*
+  starRating: 5
+  active: true
+  
+Language(lang-ru):
+  isoCode: ru
+  name: russian
+  active: true
+  
+Language(lang-en):
+  isoCode: en
+  name: english
+  active: true
+  
+Country(country-1):
+  name: Checz republic
+  active: true
+
+City(city-1):
+  name: Abrahma
+  country: country-1
+  active: true
+  
+Hotel(hotel-1):
+  name: Agricola
+  creator: user-alt
+  category: hotelcategory-4
+  phone: '+3012222124'
+  email: hotel.agricola@altio.us
+  language: lang-ru
+  active: true
+  
+Hotel(hotel-2):
+  name: Abe
+  creator: user-alt
+  category: hotelcategory-5
+  phone: '+3073138843'
+  email: hotel.abe@altio.us
+  language: lang-ru
+  active: true
+  
+Hotel(hotel-3):
+  name: Abazzio
+  creator: user-alt
+  category: hotelcategory-3
+  phone: '+3073111112'
+  email: hotel.abazzio@altio.us
+  language: lang-en
+  active: true
+  
+Hotel(hotel-4):
+  name: Artpalace
+  creator: user-alt
+  category: hotelcategory-2
+  phone: '+3073114612'
+  email: hotel.artpalace@altio.us
+  language: lang-en
+  active: true
+
+Hotel(hotel-5):
+  name: Akat
+  creator: user-alt
+  category: hotelcategory-3
+  phone: '+307376623'
+  email: hotel.akat@altio.us
+  language: lang-en
+  active: true
+  
+Hotel(hotel-6):
+  name: A UND A
+  creator: user-alt
+  category: hotelcategory-3
+  phone: '+305651232'
+  email: hotel.aunda@altio.us
+  language: lang-en
+  active: true
+  
+Hotel(hotel-7):
+  name: ACHAT
+  creator: user-alt
+  category: hotelcategory-5
+  phone: '+30146767'
+  email: hotel.achat@altio.us
+  language: lang-en
+  active: true
+  
+Hotel(hotel-8):
+  name: Adler
+  creator: user-alt
+  category: hotelcategory-2
+  phone: '+3073545465'
+  email: hotel.adler@altio.us
+  language: lang-en
+  active: true
+  
+Hotel(hotel-9):
+  name: ADRIA HOTEL PRAGUE
+  creator: user-alt
+  category: hotelcategory-5
+  phone: '+30767674343'
+  email: hotel.adriaprague@altio.us
+  language: lang-en
+  active: true
+  
+Hotel(hotel-10):
+  name: Alchemyst
+  creator: user-alt
+  category: hotelcategory-3
+  phone: '+3073756565'
+  email: hotel.alchemyst@altio.us
+  language: lang-en
+  active: true
+  
+Hotel(hotel-11):
+  name: Akord
+  creator: user-alt
+  category: hotelcategory-3
+  phone: '+307376667'
+  email: hotel.akord@altio.us
+  language: lang-en
+  active: true
+  
+Hotel(hotel-12):
+  name: Albion
+  creator: user-alt
+  category: hotelcategory-3
+  phone: '+3077676423'
+  email: hotel.albion@altio.us
+  language: lang-en
+  active: true
+
+Roomtype(roomtype-SGL):
+  name: SGL
+  adults: 1
+  children: 0
+  adultsExtrabeds: 0
+  childrenExtrabeds: 0
+  active: true
+  
+Roomtype(roomtype-DBL):
+  name: DBL
+  adults: 2
+  children: 0
+  adultsExtrabeds: 0
+  childrenExtrabeds: 0
+  active: true
+  
+Roomtype(roomtype-TPL):
+  name: TPL
+  adults: 3
+  children: 0
+  adultsExtrabeds: 0
+  childrenExtrabeds: 0
+  active: true
+  
+Roomtype(roomtype-DBLCHD):
+  name: DBLCHD
+  adults: 2
+  children: 1
+  adultsExtrabeds: 0
+  childrenExtrabeds: 0
+  active: true
+
+Roomtype(roomtype-DBL2CHD):
+  name: DBL2CHD
+  adults: 2
+  children: 2
+  adultsExtrabeds: 0
+  childrenExtrabeds: 0
+  active: true
+  
+Roomtype(roomtype-DBLEXB):
+  name: DBLEXB
+  adults: 2
+  children: 0
+  adultsExtrabeds: 1
+  childrenExtrabeds: 0
+  active: true
+  
+Mealtype(mealtype-BB):
+  name: BB
+  active: true
+  
+Mealtype(mealtype-HB):
+  name: HB
+  active: true
+  
+Mealtype(mealtype-BO):
+  name: BO
+  active: true
+  
+Mealtype(mealtype-AI):
+  name: AI
+  active: true
+  
+Tourist(tourist-1):
+  name: Joseph Philipp
+  salutation: MR
+  
+Tourist(tourist-2):
+  name: Maria Ohara
+  salutation: MRS
+  
+Tourist(tourist-3):
+  name: Matt Pro
+  salutation: MR
+  
+Tourist(tourist-4):
+  name: Mark Markus
+  salutation: CHLD
+  dateOfBirth: 2000-11-12
+  
+Tourist(tourist-5):
+  name: Marice Decay
+  salutation: MRS
+  
+HotelService(hotelService-1):
+  hotel: hotel-4
+  startDate: 2011-12-25
+  endDate: 2012-01-03
+  mealtype: mealtype-AI
+  roomtype: roomtype-DBLCHD
+  price: 210.50
+  
+HotelService(hotelService-2):
+  hotel: hotel-1
+  startDate: 2011-12-14
+  endDate: 2012-12-20
+  mealtype: mealtype-HB
+  roomtype: roomtype-SGL
+  price: 170.33
+  enduserComment: Flowers in room, please
+  
+HotelService(hotelService-3):
+  hotel: hotel-3
+  startDate: 2011-12-17
+  endDate: 2012-12-18
+  mealtype: mealtype-BB
+  roomtype: roomtype-DBL
+  price: 110.67
+  enduserComment: Rivierside view, please.
+  
+TransferService(transferService-1):
+  startDate: 2011-12-17
+  startCity: city-1
+  startTime: 17:00:00
+  startPosition: Airport "LXR"
+  endPosition: Hotel "Abazzio" 
+  price: 110.67
+  enduserComment: Flight AB2 762
+  
+AnyService(anyService-1):
+  description: sim card CZ telecom
+  price: 10.00
+    
+Request(request-1):
+  requestNumber: 1
+  issueDate: 2011-10-11
+  serviceStartDate: 2011-12-25
+  city: city-1
+  tourlead: client-3
+  services: [hotelService-1, anyService-1]
+  tourists: [tourist-1, tourist-2, tourist-4]
+  user: user-alt
+  active: true
+  
+Request(request-2):
+  requestNumber: 2
+  issueDate: 2011-11-01
+  serviceStartDate: 2011-12-14
+  city: city-1
+  tourlead: client-5
+  services: [hotelService-2]
+  tourists: [tourist-3]
+  user: user-alt
+  active: true
+  
+Request(request-3):
+  requestNumber: 3
+  issueDate: 2011-11-11
+  serviceStartDate: 2011-12-17
+  city: city-1
+  tourlead: client-1
+  services: [hotelService-3, transferService-1]
+  tourists: [tourist-5]
+  user: user-alt
+  active: false

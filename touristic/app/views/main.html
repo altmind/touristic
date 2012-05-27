@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+<title>#{get 'title' /}</title>
+<meta charset="${_response_encoding}" />
+<link rel="stylesheet" media="screen"
+	href="@{'/public/stylesheets/reset.css'}" />
+<link rel="stylesheet" media="screen"
+	href="@{'/public/stylesheets/main.css'}" />
+<link rel="stylesheet" media="screen"
+	href="@{'/public/stylesheets/datatable.css'}" />
+<link rel="stylesheet" media="screen"
+	href="@{'/public/stylesheets/menu/menu.css'}" />
+#{get 'moreStyles' /}
+<link rel="shortcut icon" type="image/png"
+	href="@{'/public/images/favicon.png'}">
+<script src="@{'/public/javascripts/jquery-1.5.2.min.js'}"
+	type="text/javascript" charset="${_response_encoding}"></script>
+<script src="@{'/public/javascripts/jquery.tmpl.min.js'}"
+	type="text/javascript" charset="${_response_encoding}"></script>
+<script src="@{'/public/javascripts/tpl/all.tpl.js'}"
+	type="text/javascript" charset="${_response_encoding}"></script>
+#{get 'moreScripts' /}
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<table id="headerTable">
+				<tr>
+					<td id="headerColumn"><a href="/"> Touristíc! </a></td>
+					<td id="menuColumn">
+						<ul class="sf-menu">
+							<li class="current"><a href="@{Application.index}">&{'menu.main'}</a>
+							</li>
+							<li><a href="@{Requests.list}">&{'menu.orders'}</a></li>
+							<li><a href="@{Clients.list}">&{'menu.clients'}</a>
+<!-- 								<ul>
+									<li><a href="@ {Opportunities.list}">&{'menu.opportunities'}</a>
+									</li>
+								</ul></li> -->
+							<li><a href="#" onclick="return false;">&{'menu.catalogs'}</a>
+								<ul>
+									<li><a href="@{CatalogHotels.list}">&{'menu.hotels'}</a></li>
+									<li><a href="@{CatalogCountries.list}">&{'menu.countries'}</a></li>
+									<li><a href="@{CatalogCities.list}">&{'menu.cities'}</a></li>
+									<li><a href="@{CatalogRoomtypes.list}">&{'menu.roomtypes'}</a></li>
+									<li><a href="@{CatalogMealtypes.list}">&{'menu.mealtypes'}</a></li>
+									<li><a href="@{CatalogHotelcategories.list}">&{'menu.hotelcategories'}</a></li>
+								</ul></li>
+							<li><a href="#">&{'menu.preferences'}</a>
+								<ul>
+									<li><a href="@{Users.list}">&{'menu.users'}</a></li>
+									<li><a href="@ {Appearance.index}">&{'menu.appearance'}</a></li>
+									<li><a href="@ {Rules.index}">&{'menu.rules'}</a></li>
+								</ul></li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="content">
+			<div class="panel">#{doLayout /}</div>
+		</div>
+	</div>
+</body>
+</html>

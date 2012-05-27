@@ -1,0 +1,63 @@
+#{extends 'main.html' /} #{set title:'Countries list' /}
+<form method="get" action="${request.url}">
+    <table class="filterandcontentpane">
+        <tr>
+            <td class="filterpanel">
+                <div class="filterpanel">
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="filtertab ${params['filter.active']!='false'?'filtertabactive':''}">
+                                    <a href="${extensions.QueryStringExtensions.queryStringExcluding(request, 'filter.active')}">&{'countries.active'}</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="filtertab ${params['filter.active']=='false'?'filtertabactive':''}">						
+                                    <a href="${extensions.QueryStringExtensions.queryStringIncluding(request, 'filter.active', 'false')}">&{'countries.archive'}</a>
+                                </div>
+                            </td>
+                        </tr>					
+                        <tr>
+                            <td>
+                                <div class="filtertab">
+                                    <a href="@{CatalogCountries.create}">&{'countries.create'}</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="filterblock">
+                                	<input type="hidden" name="filter.active" value="${filter?.active}"/>
+                                    #{c.field 'filter.name'}
+                                    <div>
+                                        <strong>&{'country.filter.name'}:</strong><br /> <input type="text" name="${field.name}" value="${field.value}" class="${field.errorClass}">
+                                            #{if field.error}
+                                            <span class="error">${field.error}</span>
+                                            #{/if}
+                                    </div>
+                                    #{/c.field}
+                                    <input type="submit" value="&{'filter'}" /><br /> <input class="thinbutton"
+                                        type="submit" name="resetFilter" value="&{'do.not.filter'}" />
+                                </div></td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+            <td class="contentpanel">
+                #{dt.datatable values:countries, size:entitiesCount }
+                #{dt.head}
+                #{dt.col orderby='id'}&{'countries.tablefield.id'}#{/dt.col}
+                #{dt.col orderby='name'}&{'countries.tablefield.name'}#{/dt.col}
+                #{/dt.head}
+                #{dt.row}
+                #{dt.col}#{a @view(row.id)}${row.id}#{/a}#{/dt.col}
+                #{dt.col}${row.name}#{/dt.col}
+                #{/dt.row}
+                #{/dt.datatable}
+                
+            </td>
+        </tr>
+    </table>
+</form>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:9000/login" />
+<title>Request</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Request</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/clients</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Заказы</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Создать</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Редактировать</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=requests_tourlead_id</td>
+	<td>label=Krasin Mark</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=//input[@value='Добавить туриста']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=names[]</td>
+	<td>Petrov Ivan</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=salutation[]</td>
+	<td>label=MR</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=do.save</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//*[@id='touristsBox']/ol/li[1]</td>
+	<td>Petrov Ivan, MR</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=touristsBox</td>
+	<td>*: Krasin Mark*</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Добавить</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=hotelSelect</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=do.save</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=serviceHotelMealtypeSelect</td>
+	<td>label=AI</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=serviceHotelHotelIdSelect</td>
+	<td>index=1</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=serviceHotelRoomtypeSelect</td>
+	<td>label=SGL</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=serviceHotelPrice</td>
+	<td>99.00</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@name='comment']</td>
+	<td>Sea view, please</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=serviceHotelStartDate</td>
+	<td>2012-01-05</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=serviceHotelEndDate</td>
+	<td>2012-01-12</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=do.save</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//*[@class='serviceDiv'][1]</td>
+	<td>HOTEL Abe*</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=paymentsBox</td>
+	<td>* 99.00*</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Добавить</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=transferSelect</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=do.save</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=serviceTransferStartDate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=serviceTransferStartDate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=serviceTransferStartDate</td>
+	<td>2012-01-05</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=serviceTransferStartTime</td>
+	<td>15:00</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=serviceTransferCityIdSelect</td>
+	<td>label=Andorra la Vella[Andorra]</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=startPosition</td>
+	<td>Powder Gates</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=endPosition</td>
+	<td>Hotel ABE</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=serviceTransferPrice</td>
+	<td>15.30</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=do.save</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//*[@class='serviceDiv'][2]</td>
+	<td>*TRANSFER*</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=paymentsBox</td>
+	<td>* 114.30*</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//td[@id='servicesBox']/a[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=paymentsBox</td>
+	<td>* 99.00*</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=img[alt=&quot;Voucher&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//*[@class='serviceDiv'][1]</td>
+	<td>HOTEL Abe*</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//*[@class='serviceDiv'][1]/following::td</td>
+	<td>*99.00*</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//*</td>
+	<td>*Krasin Mark*</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

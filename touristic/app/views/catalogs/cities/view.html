@@ -1,0 +1,65 @@
+#{extends 'main.html' /} #{set title:'City' /}
+#{set 'moreScripts'}
+#{/set}
+<table class="entityblock">
+	<tr>
+		<td>
+			<h2>&{'entity.city'} #{if city.id!=null}"${city.name}"#{/if}</h2>
+			<div class="entitybacktolist">#{a @CatalogCities.list()}&{'entity.details.back.to.list'}#{/a}</div>
+			<form method="GET" action="">
+			<table class="entitytable">
+				<tr>
+					<td>
+						<table class="width100p">
+        					#{c.field 'city.active'}
+							<tr>
+								<td class="entitylabelcolumn"><label>&{'entity.details.active'}: </label></td>
+								<td>
+									#{radioOnOff class:field.errorClass, name:field.name, value: field.value, error: field.error, editable: editable /}
+								</td>
+							</tr>
+							#{/c.field}
+							#{c.field 'city.name'}
+							<tr>
+								<td class="entitylabelcolumn"><label for="${field.id}">&{'entity.city.name'}: </label></td>
+								<td>
+									<input id="${field.id}" name="${field.name}" type="text" class="${field.errorClass}" value="${field.value}" ${editable} />
+									#{if field.error}
+									<span class="error">${field.error}</span>
+									#{/if}
+								</td>
+							</tr>
+							#{/c.field}
+							#{c.field 'city.country.id'}
+							<tr>
+								<td class="entitylabelcolumn"><label for="${field.id}">&{'entity.city.country'}: </label></td>
+								<td>
+									#{optionList id:field.id, name: field.name, value:field.value, values:allCountries, class: field.errorClass, editable:editable, nullable: false /}
+									#{if field.error}
+									<span class="error">${field.error}</span>
+									#{/if}									
+								</td>
+							</tr>
+							#{/c.field}			
+							<tr>
+								<td colspan="2">
+									<input type="hidden" name="city.id" value="${city.id}"/>
+									#{if "".equals(editable)}
+										<input class="actionbutton" type="submit" name="do.save" value="&{'entity.details.save'}"/>
+									#{/if}
+									#{else}
+										<input class="actionbutton" type="submit" name="do.edit" value="&{'entity.details.edit'}"/>
+									#{/else}
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td class="entityCommentsColumn">
+						#{entityComments  entityName:'city', entityId:city.id /}
+					</td>
+				</tr>				
+			</table>
+			</form>
+		</td>
+	</tr>
+</table>

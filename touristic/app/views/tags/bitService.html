@@ -1,0 +1,14 @@
+<div class="serviceDiv">
+#{if (_service instanceof models.HotelService)}
+	&{'HOTEL'} ${_service.hotel.name} ${_service.hotel.category.name}
+	#{if _extended==true}
+		Mealtype: ${_service.mealtype.name}, Roomtype: ${_service.roomtype.name}, ${_service.startDate.format()}/${_service.endDate.format()}, for ${_request.tourists.count()} persons
+	#{/if} 
+#{/if}
+#{if (_service instanceof models.TransferService)}
+	&{'TRANSFER'} ${_service.startCity}: ${_service.startPosition} - ${_service.endPosition}, ${_service.startDate}
+#{/if}
+#{if (_service instanceof models.AnyService)}
+	&{'SERVICE'} ${_service.description}, ${_service.startDate}
+#{/if}
+</div>

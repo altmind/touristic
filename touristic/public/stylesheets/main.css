@@ -1,0 +1,201 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    font-size: 13px;
+    color: #333;
+}
+#wrapper {
+    display: block;
+    width: 980px;
+    margin: 0px auto;
+    border: 1px solid #CCC;
+}
+#header {
+    border-bottom: 1px solid #CCC;
+    background: url(../images/ui/header_bg_akka.jpg) no-repeat;
+    height: 105px;
+}
+#headerTable {
+    height: 100%;
+    width: 100%;
+}
+#headerColumn {
+    vertical-align: middle;
+}
+#headerColumn a {
+    color: white;
+    padding-left: 15px;
+    font-family: Myriad Pro;
+    font-size: 36px;
+    text-decoration: none;
+}
+#menuColumn {
+    vertical-align: bottom;
+}
+#content {
+    background-color: #EFEFEF;
+    padding: 10px;
+    height: 100%;
+}
+#content .panel {
+    margin: 5px;
+    border: 1px solid #A4A4A4;
+    background-color: white;
+/* padding: 5px; */
+}
+#mainPageMainCenteredPanel {
+    vertical-align: middle;
+    text-align: center;
+}
+#mainPageMainCenteredPanel #actionIconTable {
+    margin: 60px auto;
+}
+.filtertab {
+    display: table-cell;
+    border-bottom: 1px solid #999;
+    margin:0;
+    background-image: url(../images/ui/arrowtab-bg.png);
+    background-repeat: repeat-x;
+    background-position:top;
+    width:150px;
+    height: 58px;
+    vertical-align: middle;
+    text-align: center;
+    padding:0;
+    font-weight: bold;
+}
+.filtertab a, .filtertab a:visited {
+    margin-top: 22px;
+    color: #333;
+    text-decoration: none;
+}
+.filtertabactive {
+    background-image: url(../images/ui/arrowtab-activebg.png);
+    color: white;
+    background-color: #CCC;
+    border-bottom-style: none;
+}
+.filtertabactive a, .filtertabactive a:visited {
+    color: white;
+}
+.filterblock {
+    padding: 3px;
+    width: 144px;
+}
+.filterblock input, .filterblock select {
+    width: 100%;
+}
+td.filterpanel {
+    border-right: 1px solid #999;
+    vertical-align:top;
+}
+.contentpanel {
+    padding: 3px;
+    width: 100%;
+    vertical-align:top;
+}
+input, select {
+    padding: 0;
+    margin: 0;
+    border: 1px solid #CCC;
+    background-color: #EEE;
+    box-sizing: border-box;
+    margin-bottom: 1px;
+    margin-top: 1px;
+}
+input[type=button],input[type=submit] {
+    background-image: url(../images/ui/inputbg.png);
+    background-repeat:repeat-x;
+    background-color: #DEDEDF;
+/* match background bottom bg */    
+    height: 18px;
+    font-size: 13px;
+    color: #000;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+input[type=button]:active,input[type=submit]:active {
+    border-color: #AAA;
+}
+input[type=button].thinbutton,input[type=submit].thinbutton {
+    height: 13px;
+    font-size: 10px;
+    color: #666;
+}
+input[type=button].actionbutton,input[type=submit].actionbutton {
+    height: 23px;
+    font-size: 18px;
+    padding-left: 75px;
+    padding-right: 75px;
+}
+input[type=radio],input[type=checkbox]{
+    vertical-align: text-bottom;
+    border-style:none;
+}
+.hasError{
+    background-color: pink;
+}
+.error{
+    border: 1px solid red;
+    margin: 4px;
+    padding: 5px;
+    background-color: pink;
+}
+.entityblock {
+    width: 100%;
+}
+.entitytable {
+    width: 100%;
+}
+.entitytable td {
+    vertical-align: top;
+    padding: 2px;
+}
+.entitylabelcolumn {
+    width:200px;
+    text-align: right;
+}
+.entityCommentsColumn {
+    width: 200px;
+    padding: 8px;
+}
+.entityCommentsList {
+}
+.entityCommentsInput {
+    width:100%;
+}
+.entityCommentsButton {
+    width:100%;
+}
+h1,h2,h3,h4,h5,h6 {
+    margin: 5px;
+}
+h1 {
+    font-size: 1.9em;
+    font-weight: bold;
+}
+h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.ralign {
+    text-align: right;
+}
+.width100p {
+    width:100%;
+}
+.entitybacktolist {
+    float:right;
+    clear: left;
+    padding-top: 5px;
+    padding-right: 5px;
+}
+.serviceDiv
+{
+    padding: 5px;
+    border: 1px solid #CCC;
+    margin: 2px;
+}

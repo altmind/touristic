@@ -1,0 +1,187 @@
+#{extends 'main.html' /} #{set title:'Add Service' /}
+#{set 'moreScripts'}
+<script src="@{'/public/javascripts/jquery.maskedinput-1.3.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+#{/set}
+<table class="entityblock">
+	<tr>
+		<td>
+			<h2>&{'entity.request'} #{if requests.id!=null}#${requests.id}#{/if}</h2>
+			<!-- <div class="entitybacktolist"># {a @Requests.view(requests.id)}&{'entity.request.back.to.entity.view'}# {/a}</div> -->
+			#{form @Requests.createService(requests.id,request.params.get('serviceType'))}
+			<table class="entitytable" id="touristTable">
+
+							#{if serviceType=='hotel'}
+					<tr>
+						<td class="entitylabelcolumn">
+
+							&{'entity.request.services.startDate'}</td><td> <input type="text" name="startDate" id="serviceHotelStartDate"/>
+							<script>$("#serviceHotelStartDate").mask('9999-99-99');</script>
+							</td>
+							</tr>
+							<tr>
+							<td class="entitylabelcolumn">&{'entity.request.services.endDate'}
+							</td>
+							<td>
+							<input type="text" name="endDate" id="serviceHotelEndDate"/><script>$("#serviceHotelEndDate").mask('9999-99-99');</script>
+							</td>
+							</tr>
+							<tr>
+							<td class="entitylabelcolumn">
+							&{'entity.request.services.mealtype'}
+							</td>
+							<td>
+							#{optionList id:'serviceHotelMealtypeSelect', name: 'mealtypeId', value:'', values:mealtypes, editable:true, nullable: false /}
+							</td>
+							</tr>
+							<tr>
+							<td class="entitylabelcolumn">
+							&{'entity.request.services.roomtype'} 
+							</td>
+							<td>
+							#{optionList id:'serviceHotelRoomtypeSelect', name: 'roomtypeId', value:'', values:roomtypes, editable:true, nullable: false /}
+							</td>
+							</tr>
+							<tr>
+							<td class="entitylabelcolumn">
+							&{'entity.request.services.hotel'} 
+							</td>
+							<td>
+							 #{optionList id:'serviceHotelHotelIdSelect', name: 'hotelId', value:'', values:hotels, editable:true, nullable: false /}
+							</td>
+							</tr>
+							<tr>
+							<td colspan="2">
+							<hr/>
+							</td>
+							</tr>
+							<tr>
+							<td class="entitylabelcolumn">
+							&{'entity.request.services.price'} 
+							</td>
+							<td>
+							<input type="text" name="price" id="serviceHotelPrice"/>
+							</td>
+							</tr>
+							<tr>
+							<td class="entitylabelcolumn">
+							&{'entity.request.services.comment'} 
+							</td>
+							<td>
+							<input type="text" name="comment"/>
+							</td>
+							</tr>
+							 
+							#{/if}
+							#{if serviceType=='transfer'}
+							<tr>
+						<td class="entitylabelcolumn">
+
+							&{'entity.request.services.startDate'}</td><td> <input type="text" name="startDate" id="serviceTransferStartDate"/>
+							<script>$("#serviceTransferStartDate").mask('9999-99-99');</script>
+							</td>
+							</tr>
+							<tr>
+							<td class="entitylabelcolumn">&{'entity.request.services.startTime'}
+							</td>
+							<td>
+							<input type="text" name="startTime" id="serviceTransferStartTime"/><script>$("#serviceTransferStartTime").mask('99:99');</script>
+							</td>
+							</tr>
+							<tr>
+							<td class="entitylabelcolumn">
+							&{'entity.request.services.startCity'} 
+							</td>
+							<td>
+							 #{optionList id:'serviceTransferCityIdSelect', name: 'cityId', value:'', values:cities, editable:true, nullable: false /}
+							</td>
+							</tr>
+								<tr>
+							<td class="entitylabelcolumn">
+							&{'entity.request.services.startPosition'} 
+							</td>
+							<td>
+							<input type="text" name="startPosition"/>
+							</td>
+							</tr>
+	<tr>
+							<td class="entitylabelcolumn">
+							&{'entity.request.services.endPosition'} 
+							</td>
+							<td>
+							<input type="text" name="endPosition"/>
+							</td>
+							</tr>
+														<tr>
+							<td colspan="2">
+							<hr/>
+							</td>
+							</tr>
+							<tr>
+							<td class="entitylabelcolumn">
+							&{'entity.request.services.price'} 
+							</td>
+							<td>
+							<input type="text" name="price" id="serviceTransferPrice"/>
+							</td>
+							</tr>
+							<tr>
+							<td class="entitylabelcolumn">
+							&{'entity.request.services.comment'} 
+							</td>
+							<td>
+							<input type="text" name="comment"/>
+							</td>
+							</tr>
+							
+														
+							
+							#{/if}
+							#{if serviceType=='any'}
+<tr>
+						<td class="entitylabelcolumn">
+
+							&{'entity.request.services.startDate'}</td><td> <input type="text" name="startDate" id="serviceTransferStartDate"/>
+							<script>$("#serviceTransferStartDate").mask('9999-99-99');</script>
+							</td>
+							</tr>
+							<tr>
+						<td class="entitylabelcolumn">
+
+							&{'entity.request.services.description'}</td><td> <input type="text" name="description" id="serviceAnyDescription"/>
+							
+							</td>
+							</tr>
+														<tr>
+							<td colspan="2">
+							<hr/>
+							</td>
+							</tr>
+							<tr>
+							<td class="entitylabelcolumn">
+							&{'entity.request.services.price'} 
+							</td>
+							<td>
+							<input type="text" name="price" id="serviceAnyPrice"/>
+							</td>
+							</tr>
+							<tr>
+							<td class="entitylabelcolumn">
+							&{'entity.request.services.comment'} 
+							</td>
+							<td>
+							<input type="text" name="comment"/>
+							</td>
+							</tr>
+							#{/if}
+							
+
+        			<tr colspan="2">
+        			<td>
+						<input class="actionbutton" type="submit" name="do.save" value="&{'entity.details.save'}"/>
+        			</td>
+        			</tr>		
+			</table>
+			#{/form}
+		</td>
+	</tr>
+</table>

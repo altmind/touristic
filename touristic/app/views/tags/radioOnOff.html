@@ -1,0 +1,7 @@
+<span class="${_class}">
+	<input id="${_name}.true" name="${_name}" value="true" type="radio" class="onCheckShowCheckbox ${_class}" ${_value==true?"checked=\"checked\"":""} ${_editable} /><label for="${_name}.true">&{'entity.details.active.on'} </label>
+	<input id="${_name}.false" name="${_name}" value="false" type="radio" class="onCheckDontShowCheckbox ${_class}" ${_value!=true?"checked=\"checked\"":""} ${_editable} /><label for="${_name}.false">&{'entity.details.active.off'}</label>
+</span>
+#{if _error}
+	<span class="error">${_error}</span>
+#{/if}

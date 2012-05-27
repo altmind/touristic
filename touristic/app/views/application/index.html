@@ -1,0 +1,20 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+<div id="mainPageMainCenteredPanel">
+	#{secure.check 'agent'}
+	<table id="actionIconTable">
+		<tr>
+			<td><img src="@{'public/images/ui/mainPage/128px_new_user.png'}" alt="&{'add.user'}"/></td>
+			<td><img src="@{'public/images/ui/mainPage/128px_new_order.png'}" alt="&{'new.order'}"/></td>
+			<td><img src="@{'public/images/ui/mainPage/128px_new_payment.png'}" alt="&{'new.payment'}"/></td>
+			<td><img src="@{'public/images/ui/mainPage/128px_documents.png'}" alt="&{'prepare.documents'}"/></td>
+		</tr>
+		<tr>
+			<td>&{'add.client'}</td>
+			<td>&{'new.order'}</td>
+			<td>&{'new.payment'}</td>
+			<td>&{'prepare.documents'}</td>
+		</tr>
+	</table>
+	#{/secure.check}
+</div>

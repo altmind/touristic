@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+	<title>INVOICE ${requests.requestNumber}</title>
+	<style>
+	body
+	{
+	background-image: url('/public/images/ui/reports/voucherBg.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	}
+	</style>
+</head>
+<body>
+	<h1>VOUCHER for order ${requests.requestNumber}</h1>
+	<table style="width: 100%">
+		<tr>
+			<td style="width: 200px;">
+			Date:
+			</td>
+			<td>
+			${new Date().format()}
+			</td>	
+		</tr>
+		<tr>
+			<td>
+			Travel Agent:
+			</td>
+			<td>
+			${requests.agent}
+			</td>	
+		</tr>		
+	</table>
+	#{organizationInformation/}<br/>
+	#{clientInformation client: requests.tourlead/}<br/>
+	<table style="width: 100%; border: 1px solid #CCC;">
+		#{list requests.services, as:'service'}
+			<tr>
+				<td >
+				#{bitService service:service, request:requests, extended: true/}
+				</td>
+			</tr>
+		#{/list}		
+	</table>	
+</body>
+</html>

@@ -1,0 +1,1 @@
+<select  id="${_id}" name="${_name}" ${_editable} class="${_class}">#{if _value==null}<option ${_value==null?'selected="selected" ':''}></option>#{/if}#{list _values, as:'row'}<option value="${row}" label="${row.toString()}" ${row.equals(_value)?'selected="selected" ':''}>${row}</option>#{/list}</select>

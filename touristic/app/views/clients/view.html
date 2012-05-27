@@ -1,0 +1,78 @@
+#{extends 'main.html' /} #{set title:'Client' /}
+#{set 'moreScripts'}
+<script src="@{'/public/javascripts/jquery.maskedinput-1.3.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+#{/set}
+<table class="entityblock">
+	<tr>
+		<td>
+			<h2>&{'entity.client'} #{if client.id!=null}"${client.name}"#{/if}</h2>
+			<div class="entitybacktolist">#{a @Clients.list()}&{'entity.details.back.to.list'}#{/a}</div>
+			<form method="GET" action="">
+			<table class="entitytable">
+				<tr>
+					<td>
+						<table class="width100p">
+        					#{c.field 'client.active'}
+							<tr>
+								<td class="entitylabelcolumn"><label>&{'entity.details.active'}: </label></td>
+								<td>
+									#{radioOnOff class:field.errorClass, name:field.name, value: field.value, error: field.error, editable: editable /}
+								</td>
+							</tr>
+							#{/c.field}
+							#{c.field 'client.salutation'}
+							<tr>
+								<td class="entitylabelcolumn"><label for="${field.id}">&{'entity.client.salutation'}: </label></td>
+								<td>
+									#{optionListEnum id:field.id, name: field.name, value:field.value, values:models.Client.Salutation.values(), class: field.errorClass, editable:editable, nullable: false /}
+									#{if field.error}
+									<span class="error">${field.error}</span>
+									#{/if}									
+								</td>
+							</tr>
+							#{/c.field}
+							#{c.field 'client.name'}
+							<tr>
+								<td class="entitylabelcolumn"><label for="${field.id}">&{'entity.client.name'}: </label></td>
+								<td>
+									<input id="${field.id}" name="${field.name}" type="text" class="${field.errorClass}" value="${field.value}" ${editable} />
+									#{if field.error}
+									<span class="error">${field.error}</span>
+									#{/if}
+								</td>
+							</tr>
+							#{/c.field}
+							#{c.field 'client.dateOfBirth'}
+							<tr>
+								<td class="entitylabelcolumn"><label for="client.dateOfBirth">&{'entity.client.dateOfBirth'}: </label></td>
+								<td>
+									<input id="${field.id}" name="${field.name}" type="text" class="${field.errorClass}" value="${field.value!=null?field.value.format():''}" ${editable} />
+									#{if field.error}
+									<span class="error">${field.error}</span>
+									#{/if}
+									<script>$(${field.id.escapeJavaScript()}).mask("9999-99-99");</script>
+								</td>
+							</tr>
+							#{/c.field}
+							<tr>
+								<td colspan="2">
+									<input type="hidden" name="client.id" value="${client.id}"/>
+									#{if "".equals(editable)}
+										<input class="actionbutton" type="submit" name="do.save" value="&{'entity.details.save'}"/>
+									#{/if}
+									#{else}
+										<input class="actionbutton" type="submit" name="do.edit" value="&{'entity.details.edit'}"/>
+									#{/else}
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td class="entityCommentsColumn">
+						#{entityComments  entityName:'client', entityId:client.id /}
+					</td>
+				</tr>				
+			</table>
+			</form>
+		</td>
+	</tr>
+</table>

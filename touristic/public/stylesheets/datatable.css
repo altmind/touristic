@@ -1,0 +1,32 @@
+table.datatable{
+    border: 1px solid #333;
+    width: 100%;
+        
+}
+table.datatable thead{
+    font-weight: bold;
+    background-image: url(../images/ui/datatable-thead-bg.png);
+    background-repeat: repeat-x;
+}
+table.datatable tr {
+
+}
+table.datatable tbody tr:hover {
+    background-color: #DDF;
+}
+table.datatable td{
+    padding: 3px;
+    border: 1px solid #797979;
+}
+.datatablescroller{
+    float: right;
+    margin-top: -1px;
+    padding: 0px;
+}
+.datatablescroller table{
+    margin-bottom: 10px;
+}
+.datatablescroller table td{
+    padding: 1px 7px;
+    border: 1px solid #797979;
+}

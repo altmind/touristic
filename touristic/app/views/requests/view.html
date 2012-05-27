@@ -1,0 +1,98 @@
+#{extends 'main.html' /} #{set title:'Request' /}
+#{set 'moreScripts'}
+#{/set}
+<table class="entityblock">
+	<tr>
+		<td>
+			<h2>&{'entity.request'} #{if requests.id!=null}"${requests.requestNumber}"#{/if}</h2>
+			<div class="entitybacktolist">#{a @Requests.list()}&{'entity.details.back.to.list'}#{/a}</div>
+			
+			<table class="entitytable">
+				<tr>
+					<td>
+						<table class="width100p">
+							<tr>
+								<td id="touristsBox">
+									<h2>&{'entity.request.tourists'}</h2><br/>
+									#{if requests.tourlead!=null}&{'entity.request.tourists.tourlead'}: ${requests.tourlead.name}#{/if}
+									<br/><br/>
+									<ol>
+									#{list requests.tourists, as:'tourist'}
+										<li>${tourist.name}, ${tourist.salutation}</li>
+									#{/list}
+									</ol>
+									<a href="@{Requests.edit(requests.id)}">&{'entity.request.tourists.edit'}</a>
+								</td>
+							</tr>
+							<tr>
+								<td id="servicesBox">
+									<h2>&{'entity.request.services'}</h2><br/>
+									
+									#{list requests.services, as:'service'}
+										#{bitService service:service/}<a href="@{Requests.deleteService(requests.id,service.id)}"/>&{'entity.request.services.delete'}</a>
+									#{/list}
+									<br/>
+									<br/>
+									<a href="@{Requests.chooseServiceType(requests.id)}">&{'entity.request.services.add'}</a>
+								</td>
+							</tr>
+							<tr>
+								<td id="paymentsBox">
+									<h2>&{'entity.request.payments'}</h2><br/>
+									
+									<b>&{'entity.request.payments'}:</b>
+									#{list payments, as:'payment'}
+										${payment}
+									#{/list}
+									&{'entity.request.amount.total.paid'} ${requests.totalPaid()} / &{'entity.request.amount.due'} ${requests.totalPrice()}<br/>
+									&{'entity.request.amount.add'}:
+									
+									#{form @addPayment(requests.id)}
+										#{c.field 'amount'  }
+											<input type="text" id="${field.id}" name="${field.name}" />
+										#{/c.field}
+										#{c.field 'paymentType'}
+											#{optionListEnum id:field.id, name: field.name, value:field.value, values:models.Payment.PaymentType.values(), class: field.errorClass, editable:editable, nullable: false /}
+										#{/c.field}										
+										<input type="submit"/>
+									#{/form}
+								</td>
+							</tr>
+							<tr>
+								<td  id="reportsBox">
+									<h2>&{'entity.request.documents'}</h2><br/>
+										<table id="actionIconTable" style="text-align: center">
+		<tr>
+			<td>
+				<a href="@@{Requests.invoice(requests.id)}" taget="_blank">
+					<img src="@{'public/images/ui/requestPage/32px_gtk-justify-fill.png'}" alt="Voucher" />
+				</a>
+			</td>
+			<td>
+				<a href="@@{Requests.voucher(requests.id)}" taget="_blank">
+					<img src="@{'public/images/ui/requestPage/32px_gtk-paste.png'}" alt="Invoice" />
+				</a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				&{'entity.request.download.voucher'}
+			</td>
+			<td>
+				&{'entity.request.download.invoice'}
+			</td>
+		</tr>
+	</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td class="entityCommentsColumn">
+						#{entityComments  entityName:'request', entityId:requests.id /}
+					</td>
+				</tr>				
+			</table>
+			</form>
+		</td>
+	</tr>
+</table>

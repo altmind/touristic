@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:9000/login" />
+<title>Cities-Create/Find/Sort</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Cities-Create/Find/Sort</td></tr>
+</thead><tbody>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Города</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=.datatable tbody tr</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Архив</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Создать</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=city_name</td>
+	<td>Prague2</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=city_country_id</td>
+	<td>label=Checz republic</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=city.active.false</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=do.save</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Архив</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=.datatable tbody tr</td>
+	<td>*Prague2*</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=filter.name</td>
+	<td>Prague3</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementNotPresent</td>
+	<td>css=.datatable tbody tr</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=filter.name</td>
+	<td>Prague2</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=.datatable tbody tr td a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=formContent</td>
+	<td>please, provide extra breakfast</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=formSubmit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=.entityComment</td>
+	<td>*please, provide extra breakfast*</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Города</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Активные</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=resetFilter</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=.datatable tbody tr td</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=#</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=#</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyNotText</td>
+	<td>css=.datatable tbody tr td</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>storeXpathCount</td>
+	<td>//*[@class='datatablescroller']//select/option</td>
+	<td>count</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>storedVars['count']-1</td>
+	<td>count</td>
+</tr>
+<tr>
+	<td>selectAndWait</td>
+	<td>css=.datatablescroller select</td>
+	<td>index=${count}</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//*[@class='datatable']/tbody/tr[last()]/td[1]</td>
+	<td>1</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

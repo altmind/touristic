@@ -1,0 +1,13 @@
+<select  id="${_id}" name="${_name}" ${_editable} class="${_class}">
+	#{if _value==null}
+		<option ${_value==null?'selected="selected" ':''}></option>
+	#{/if}
+	#{list _values, as:'row'}
+		<option value="${row.id}" label="${row.toString()}" ${row.id.equals(_value)?'selected="selected" ':''}>${row}</option>
+	#{/list}
+</select>
+<!-- #{if (_nullable==false && _value==null)}
+<script>
+$('#${_id.escapeJavaScript()}').bind("change", function() { alert($('#${_id.escapeJavaScript()} option[value=""]'));/*.remove()*/; });
+</script>
+#{/if} -->

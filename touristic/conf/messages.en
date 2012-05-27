@@ -1,0 +1,210 @@
+menu.main=Main
+menu.orders=Orders
+menu.clients=Clients
+menu.clients.list=List
+menu.opportunities=Opportunities
+menu.catalogs=Catalogs
+menu.hotels=Hotels
+menu.countries=Countries
+menu.cities=Cities
+menu.airports=Airports
+menu.currencies=Currencies
+menu.roomtypes=Room types
+menu.mealtypes=Meal Types
+menu.hotelcategories=Hotel Categories
+menu.flights=Flights
+menu.preferences=Preferences
+menu.users=Users		
+menu.appearance=Appearance
+menu.rules=Rules
+
+# Main page
+add.client=Add Client
+new.order=Create Order
+new.payment=New Payment
+prepare.documents=Receive documents
+
+# Clients forms
+clients.active=Active
+clients.archive=Archive
+clients.create=Create
+client.filter.name=Full name
+client.filter.country=Country
+clients.tablefield.id=\#
+clients.tablefield.name=Full name
+clients.tablefield.salutation=Salutation
+
+# Clients entities
+entity.client=Client
+entity.client.salutation=Salutation
+entity.client.name=Full name
+entity.client.dateOfBirth=Day of birth
+
+# Hotels forms
+hotels.active=Active
+hotels.archive=Archive
+hotels.create=Create
+hotel.filter.name=Hotel name
+hotel.filter.city=Hotel city
+hotels.tablefield.id=\#
+hotels.tablefield.name=Name
+hotels.tablefield.city=City
+hotels.tablefield.category=Category
+
+# Hotels entities
+entity.hotel=Hotel
+entity.hotel.name=Hotel name
+entity.hotel.city=City
+entity.hotel.category=Category
+entity.hotel.phone=Phone
+entity.hotel.email=Email
+entity.hotel.geocoordinates=Geo coordinates
+entity.hotel.language=Language
+
+#Country entities
+countries.active=Active
+countries.archive=Archive
+countries.create=Create
+country.filter.name=Country name
+countries.tablefield.id=\#
+countries.tablefield.name=Name
+
+#Country entities
+entity.country=Country
+entity.country.name=Name
+
+#City form
+cities.active=Active
+cities.archive=Archive
+cities.create=Create
+city.filter.name=Name
+city.filter.country=Country name
+cities.tablefield.id=\#
+cities.tablefield.name=Name
+cities.tablefield.country=Country
+
+#City entites
+entity.city=City
+entity.city.name=Name
+entity.city.country=Country
+
+#Roomtype form
+roomtypes.active=Active
+roomtypes.archive=Archive
+roomtypes.create=Create
+roomtype.filter.name=Name
+roomtypes.tablefield.id=\#
+roomtypes.tablefield.name=Name
+roomtypes.tablefield.adults=Ad
+roomtypes.tablefield.children=Ch
+roomtypes.tablefield.adults.extrabed=Ad ExB
+roomtypes.tablefield.children.extrabed=Ch ExB
+
+#Roomtype entities
+entity.roomtype=Roomtype
+entity.roomtype.name=name
+entity.roomtype.adults=Adults
+entity.roomtype.children=Children
+entity.roomtype.adults.extrabeds=Adults Extrabeds
+entity.roomtype.children.extrabeds=Children Extrabeds
+
+#Mealtype form
+mealtypes.active=Active
+mealtypes.archive=Archive
+mealtypes.create=Create
+mealtype.filter.name=Name
+mealtypes.tablefield.id=\#
+mealtypes.tablefield.name=Name
+
+#Mealtype entities
+entity.mealtype=Mealtype
+entity.mealtype.name=Name
+
+#Hotel Categories form
+
+hotelcategories.active=Active
+hotelcategories.archive=Archive
+hotelcategories.create=Create
+hotelcategories.filter.name=Name
+
+hotelcategories.tablefield.id=\#
+hotelcategories.tablefield.name=Name
+
+#Hotel Categories entities
+entity.hotelcategory=Hotel Category
+entity.hotelcategory.code=Code
+entity.hotelcategory.star.rating=Rating
+entity.hotelcategory.name=Name
+
+#Request
+requests.active=Active
+requests.archive=Archive
+requests.create=Create
+request.filter.requestNumber=Req. \#
+
+requests.tablefield.id=id
+requests.tablefield.number=Req. \#
+
+#Request entities
+entity.request=Request
+entity.request.tourists=Tourists
+entity.request.tourists.tourlead=Tourlead
+entity.request.services=Services
+entity.request.payments=Payments
+entity.request.amount.total=Total
+entity.request.amount.total.paid=Paid
+entity.request.amount.due=Due
+entity.request.documents=Documents
+
+entity.request.download.invoice=Invoice
+entity.request.download.voucher=Voucher
+
+entity.request.tourists.tourist=Tourist
+entity.tourist.add=Add tourist
+
+entity.request.tourists.edit=Edit
+entity.request.services.delete=delete
+entity.request.services.add=Add
+entity.request.amount.add=Add payment
+
+entity.request.service.type=Service type
+entity.request.service.hotel=Hotel
+entity.request.service.transfer=Transfer
+entity.request.service.any=Service
+
+entity.request.services.startDate=Start date
+entity.request.services.endDate=End date
+entity.request.services.mealtype=Mealtype
+entity.request.services.roomtype=Roomtype
+entity.request.services.hotel=Hotel
+entity.request.services.price=Price
+entity.request.services.comment=Comment
+
+entity.request.services.startTime=Start time
+entity.request.services.startCity=Start city
+entity.request.services.startPosition=Start position
+entity.request.services.endPosition=End position
+
+entity.request.services.description=Name
+
+# Generic filters
+filter=Filter
+do.not.filter=Don't Filter
+datatable.pagination.page Page
+datatable.pagination.page.of.total of
+datatable.pagination.pages Pages
+
+# Generic entities
+entity.details.active=Active
+entity.details.active.on=On
+entity.details.active.off=Off
+entity.details.edit=Edit
+entity.details.save=Save
+entity.details.validation.failed=Please, check that fields are filled up correctly
+entity.details.back.to.list=[Back to list]
+entity.details.next=Next \>\>
+entity.request.back.to.entity.view=[Back to entity]
+
+# Comments entities part
+comment.user.at.time=at
+entity.comments.add=\>

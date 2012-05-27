@@ -1,0 +1,54 @@
+#{extends 'main.html' /} #{set title:'Mealtype' /}
+#{set 'moreScripts'}
+#{/set}
+<table class="entityblock">
+	<tr>
+		<td>
+			<h2>&{'entity.mealtype'} #{if mealtype.id!=null}"${mealtype.name}"#{/if}</h2>
+			<div class="entitybacktolist">#{a @CatalogMealtypes.list()}&{'entity.details.back.to.list'}#{/a}</div>
+			<form method="GET" action="">
+			<table class="entitytable">
+				<tr>
+					<td>
+						<table class="width100p">
+        					#{c.field 'mealtype.active'}
+							<tr>
+								<td class="entitylabelcolumn"><label>&{'entity.details.active'}: </label></td>
+								<td>
+									#{radioOnOff class:field.errorClass, name:field.name, value: field.value, error: field.error, editable: editable /}
+								</td>
+							</tr>
+							#{/c.field}
+							#{c.field 'mealtype.name'}
+							<tr>
+								<td class="entitylabelcolumn"><label for="${field.id}">&{'entity.mealtype.name'}: </label></td>
+								<td>
+									<input id="${field.id}" name="${field.name}" type="text" class="${field.errorClass}" value="${field.value}" ${editable} />
+									#{if field.error}
+									<span class="error">${field.error}</span>
+									#{/if}
+								</td>
+							</tr>
+							#{/c.field}
+							<tr>
+								<td colspan="2">
+									<input type="hidden" name="mealtype.id" value="${mealtype.id}"/>
+									#{if "".equals(editable)}
+										<input class="actionbutton" type="submit" name="do.save" value="&{'entity.details.save'}"/>
+									#{/if}
+									#{else}
+										<input class="actionbutton" type="submit" name="do.edit" value="&{'entity.details.edit'}"/>
+									#{/else}
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td class="entityCommentsColumn">
+						#{entityComments  entityName:'mealtype', entityId:mealtype.id /}
+					</td>
+				</tr>				
+			</table>
+			</form>
+		</td>
+	</tr>
+</table>

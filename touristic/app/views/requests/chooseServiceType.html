@@ -1,0 +1,39 @@
+#{extends 'main.html' /} #{set title:'Choose request type' /}
+#{set 'moreScripts'}
+#{/set}
+<table class="entityblock">
+	<tr>
+		<td>
+			<h2>&{'entity.request'} #{if requests.id!=null}#${requests.id}#{/if}</h2>
+			<div class="entitybacktolist">#{a @Requests.view(requests.id)}&{'entity.request.back.to.entity.view'}#{/a}</div>
+			<form method="GET" action="">
+				<table class="entitytable">
+				<tr>
+					<td>
+						<table class="width100p">
+							#{c.field 'serviceType'}
+							<tr>
+								<td class="entitylabelcolumn">&{'entity.request.service.type'}:</td>
+								<td>
+									<input id="hotelSelect" name="${field.name}" type="radio" class="${field.errorClass}" value="hotel"/>
+									<label>&{'entity.request.service.hotel'}: </label><br/>
+									<input id="transferSelect" name="${field.name}" type="radio" class="${field.errorClass}" value="transfer" />
+									<label>&{'entity.request.service.transfer'}: </label><br/>
+									<input id="anyServiceSelect" name="${field.name}" type="radio" class="${field.errorClass}" value="any"/>
+									<label>&{'entity.request.service.any'}: </label>
+								</td>
+							</tr>
+							#{/c.field}
+							<tr>
+								<td colspan="2">
+									<input class="actionbutton" type="submit" name="do.save" value="&{'entity.details.next'}"/>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>				
+			</table>
+			</form>
+		</td>
+	</tr>
+</table>
